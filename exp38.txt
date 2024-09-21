@@ -1,0 +1,623 @@
+local Players = game.Players
+local Lp = Players.LocalPlayer
+local userData = game.Workspace.UserData:FindFirstChild("User_"..Lp.UserId)
+local Mission = userData.Data.MissionObjective.Value
+local KillMission = userData.Data.MissionObjectiveTarget.Value 
+local UsingHaki = userData.UsingHaki
+local Resources = game.Workspace.ResourceHolder:WaitForChild("Resources_"..Lp.UserId)
+local Difficulty = userData.Data.MissionDifficulty.Value
+local exp = userData.Data.ExpertiseExp.Value
+local Exp = userData.Data.ExpertiseLevel.Value
+local descriptionText = game:GetService("Players").LocalPlayer.PlayerGui.MissionGui.Frame.Frame.Description.Text
+local text2 = none
+_G.Contagem = 1
+local vsave
+local whitelist= {"EviIMidnight","BrokenGpuRam3","dynamoomega","0kveira","Jpblindaona","CDNXarope222"}
+
+print("AntiAfk Activated")
+local VirtualUser=game:service'VirtualUser'
+repeat
+wait()
+until game:GetService("Players").LocalPlayer ~= nil and game:GetService("Players").LocalPlayer.Idled ~= nil
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+VirtualUser:CaptureController()
+VirtualUser:ClickButton2(Vector2.new())
+end)
+
+local playerId = game.Players.LocalPlayer.UserId
+if playerId ~= 571687119 and
+   playerId  ~= 513583299 and
+   playerId  ~= 621444804 and  
+   playerId  ~= 1131049700 and
+   playerId  ~= 510132616 and
+   playerId  ~= 630398541 and
+   playerId  ~= 630398541 and
+   playerId  ~= 2411408833 and
+   playerId  ~= 451082957 and
+   playerId  ~= 808565334 and 
+   playerId  ~= 510812655 and
+   playerId  ~= 5017564875 and
+   playerId  ~= 1252102792 and
+   playerId  ~= 1543742591 then
+   print("not on whitelist")
+   script.Parent:Destroy()
+else
+   print("Whitelisted")
+end
+
+local BasePart = Instance.new("Part")
+BasePart.Size = Vector3.new(100, 1, 100) 
+BasePart.Position = Vector3.new(98000, 3500, 80000) 
+BasePart.Anchored = true
+BasePart.BrickColor = BrickColor.new("Grey") 
+BasePart.Parent = game.Workspace
+
+local Webhook = "https://discord.com/api/webhooks/1283113598796828672/l40ENZ_BQH6szm4Qi97UChu8IDxW8ZRM-yhRinbJIQK63FmSI6Xa0K69RcmlagSylB_U"
+local Headers = {["content-type"] = "application/json"}
+
+local function Alvo(string, keyword)
+    return string:lower():find(keyword:lower()) ~= nil
+end
+
+local RunService = game:GetService("RunService")
+
+if Lp.Character.DamageScript.Enabled == false then
+workspace:WaitForChild(Lp.Name):WaitForChild("Clothing_Hair")
+game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Visible = true
+game.Players.LocalPlayer.Character.CamScript.ClientServerClient:FireServer()
+game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+game.Players.LocalPlayer.Character.CharacterTrait.ClothingTrigger:FireServer()
+game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible = false 
+
+wait(5)
+
+game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible = false 
+game.Players.LocalPlayer.Character.CamScript.ClientServerClient:FireServer()
+
+
+local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb)
+local vp = x.VTCcpkghc
+local args = {
+    [1] = vp,
+    [2] = "BombPower6",
+    [3] = "StartCharging",
+    [4] = CFrame.new(-14.463105201721191, 213, -264.1326904296875, 0.7344374656677246, -0.23108896613121033, 0.6381219029426575, 1.4901157641133977e-08, 0.9402447938919067, 0.34049952030181885, -0.6786763072013855, -0.2500756084918976, 0.6905510425567627),
+    [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("Beach"):WaitForChild("Beach"),
+    [7] = "Left"
+}
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = vp,
+    [2] = "BombPower6",
+    [3] = "StopCharging",
+    [4] = CFrame.new(-207.55979919433594, 262.3489074707031, 1.4924135208129883, -0.8548505902290344, 0.43575361371040344, -0.2816900312900543, -0, 0.5428869128227234, 0.8398058414459229, 0.5188742280006409, 0.717908501625061, -0.46408721804618835),
+    [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("House"):WaitForChild("Union"),
+    [6] = 0/0
+}
+game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+
+wait(1)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(98000, 3501, 80000))
+
+
+end
+
+local function checkTime()
+    local currentTime = os.date("*t") 
+    if currentTime.min == 0 and currentTime.sec == 0 then
+        workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+        wait(5)
+        workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+        wait(15)
+        workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+    end
+end
+RunService.Heartbeat:Connect(function()
+    checkTime()
+    wait()
+end)
+
+local function hehe()
+while true do 
+wait()
+if Lp.Character.DamageScript.Enabled == true then
+    local healthBar = game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("HealthBar")
+    local minValue = healthBar.Frame.Haki.Frame.Min.Value
+    local maxValue = healthBar.Frame.Haki.Frame.Max.Value
+
+    local Mission = userData.Data.MissionObjective.Value
+    local KillMission = userData.Data.MissionObjectiveTarget.Value 
+    local Difficulty = userData.Data.MissionDifficulty.Value
+    local descriptionText = game:GetService("Players").LocalPlayer.PlayerGui.MissionGui.Frame.Frame.Description.Text
+    local exp = userData.Data.ExpertiseExp.Value
+    local Exp = userData.Data.ExpertiseLevel.Value
+    local TExp = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.B.Bar.Exp.Text
+    local rit = userData.Data.NPC_Activation_Expert.Value
+    game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.Text = ("Rhitta:")
+    game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.TextColor3 = Color3.fromRGB(255, 240, 38)
+    game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.FishAmount.Text = (rit.."/1000")
+    game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.FishAmount.TextColor3 = Color3.fromRGB(255, 240, 38)
+    game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.FishAmount.BackgroundColor3 = Color3.fromRGB(255, 252, 29)
+
+    local function SendWebhook()
+
+        local PlayerData =
+        {
+            ["content"] = "<@468422892506447882>",
+            ["embeds"] = {{
+                ["title"] = "**caiu**:",
+                ["description"] = PlayerName,
+                ["color"] = tonumber(0x2B6BE4),
+                ["fields"] = {
+                    {
+                        ["name"] = "**Expertise Level:**",
+                        ["value"] = Exp,
+                        ["inline"] = true
+                    },
+                    {
+                        ["name"] = "**Exp:**",
+                        ["value"] = TExp,
+                        ["inline"] = true
+                    },
+    
+                },
+            }}
+        }
+    
+        local PlayerDataJson = game:GetService('HttpService'):JSONEncode(PlayerData)
+        local HttpRequest = http_request
+    
+        if syn then
+            HttpRequest = syn.request
+        else
+            HttpRequest = http_request
+        end
+    
+        HttpRequest({Url = Webhook, Body = PlayerDataJson, Method = "POST", Headers = Headers})
+    end
+    
+    local function SendWebhooktask()
+    
+        local PlayerData2 =
+        {
+            ["content"] = "",
+            ["embeds"] = {{
+                ["title"] = "**Level**:",
+                ["description"] = PlayerName,
+                ["color"] = tonumber(0x2B6BE4),
+                ["fields"] = {
+                    {
+                        ["name"] = "**Expertise Level:**",
+                        ["value"] = Exp,
+                        ["inline"] = true
+                    },
+                    {
+                        ["name"] = "**Exp:**",
+                        ["value"] = TExp,
+                        ["inline"] = true
+                    },
+                    {
+                        ["name"] = "**Task:**",
+                        ["value"] = descriptionText,
+                        ["inline"] = true
+                    },
+    
+                },
+            }}
+        }
+    
+        local PlayerDataJson2 = game:GetService('HttpService'):JSONEncode(PlayerData2)
+        local HttpRequest = http_request
+    
+        if syn then
+            HttpRequest = syn.request
+        else
+            HttpRequest = http_request
+        end
+    
+        HttpRequest({Url = Webhook, Body = PlayerDataJson2, Method = "POST", Headers = Headers})
+    end
+
+    local function haki1()
+    local slanimporta = nemisso
+        end
+
+        local function haki2()
+            local I = workspace.UserData["User_"..game.Players.LocalPlayer.UserId].III
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            I:FireServer("Off", 1)
+            I:FireServer("On", 1)
+            wait(1.5)
+            I:FireServer("Off", 1)
+repeat 
+    wait()
+    local minValue = healthBar.Frame.Haki.Frame.Min.Value
+    local maxValue = healthBar.Frame.Haki.Frame.Max.Value
+until minValue == maxValue or minValue == 0
+
+end
+
+        local cloneref = cloneref or function(o) return o end
+        GuiService = cloneref(game:GetService("GuiService"))
+        GuiService.ErrorMessageChanged:Connect(function()
+            SendWebhook()
+            wait(1)
+        end)
+
+    if descriptionText ~= text2 then 
+        SendWebhooktask()
+        wait()
+        text2 = descriptionText
+    end
+    
+    if Mission ~= "Damage" and Mission ~= "Money" and Mission ~= "Player Kill" and Mission ~= "Quests" and Mission ~= "Elite Kill" and Mission ~= "Kill" then
+        workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+    end
+
+
+   if Mission ~= "Damage" and Mission ~= "Money" and Difficulty ~= "Easy" then
+    workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+   end
+
+    wait()
+    local Mission = userData.Data.MissionObjective.Value
+    wait()
+
+    if Mission == "Damage" or Mission == "Money" or KillMission == "Crab" or KillMission == "Cave Demon" or KillMission == "Angry Bob" or KillMission == "Boar" or KillMission == "Thug" or KillMission == "Thief" or KillMission == "Bandit" or KillMission == "Freddy" or KillMission == "Gunslinger" or KillMission == "Vokun" or KillMission == "Bucky" or KillMission == "Buster" or KillMission == "Bruno" or KillMission == "Gunner Captain" then
+        local healthBar = game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("HealthBar")
+        local minValue = healthBar.Frame.Haki.Frame.Min.Value
+        local maxValue = healthBar.Frame.Haki.Frame.Max.Value
+        local sla5431 = maxValue * 0.5
+        if not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and KillMission == "Cave Demon" and minValue > sla5431 or not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and KillMission == "Bucky" and minValue > sla5431 or not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and  KillMission == "Buster" and minValue > sla5431 or not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and KillMission == "Bruno" and minValue > sla5431 or not game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and KillMission == "Gunner Captain" and minValue > sla5431 then
+            userData:WaitForChild("UpdateHaki"):FireServer()
+        end
+        wait()
+        if game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and minValue < sla5431 then
+            userData:WaitForChild("UpdateHaki"):FireServer()
+            wait()
+            haki2()
+        end
+        
+        for i, z in pairs(Lp.Backpack:GetChildren()) do
+            if z.Name == "Cannon Ball" then
+                Lp.Character.Humanoid:EquipTool(z)
+            end
+        end
+        wait()
+        local args = {
+            [1] = CFrame.new(98003.890625, 3500.5, 79980.6015625, 0.9199233055114746, -0.3355996310710907, 0.20276601612567902, -1.4901162970204496e-08, 0.517130434513092, 0.8559065461158752, -0.39209845662117004, -0.7873683571815491, 0.47572028636932373),
+        }
+        
+        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball").RemoteEvent:FireServer(unpack(args))
+
+        wait(0.4)
+        for i,v in pairs(Resources:GetChildren()) do
+            if v.Name == "CannonBall" then
+                vsave = v
+            end
+        end
+
+        wait(0.1)
+
+        for i,z in ipairs(game.Workspace.Enemies:GetChildren()) do    
+            if z:FindFirstChild("HumanoidRootPart") and z:FindFirstChild("Humanoid") and z.Humanoid.Health ~= 0 and z:IsA("Model") then
+                if z.HumanoidRootPart.CFrame and vsave.CFrame then
+                vsave.CFrame = z.HumanoidRootPart.CFrame
+                end
+                task.wait()
+            end
+        end
+    end
+
+
+
+    if Mission == "Player Kill" then 
+        for i,pl in pairs(game.workspace:GetChildren()) do    
+            if pl:FindFirstChild("HumanoidRootPart") and pl.Name ~= Lp.Name and pl.Name ~= "CustomizeModel" and not table.find(whitelist, pl.Name) and pl.Humanoid.Health ~= 0 and pl:WaitForChild("DamageScript").Enabled == true then
+                repeat
+                local Mission = userData.Data.MissionObjective.Value
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pl:WaitForChild("Torso").CFrame*CFrame.new(Vector3.new(0, 30, 0))
+                for i = 1,7 do
+                local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb)
+                local vp = x.VTCcpkghc
+                local args = {
+                    [1] = vp,
+                    [2] = "BombPower6",
+                    [3] = "StartCharging",
+                    [4] = CFrame.new(97954.8515625, 3500.5, 80002.0859375, -0.968192458152771, 0.17410419881343842, -0.17969776690006256, -7.450581485102248e-09, 0.7181963920593262, 0.6958405375480652, 0.2502070367336273, 0.6737075448036194, -0.6953521966934204),
+                    [5] = workspace:WaitForChild("Part"),
+                }
+                
+                game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+                wait(0.1)
+                local args = {
+                    [1] = vp,
+                    [2] = "BombPower6",
+                    [3] = "StopCharging",
+                    [4] = CFrame.new(97954.8515625, 3500.5, 80002.0859375, -0.968192458152771, 0.17410419881343842, -0.17969776690006256, -7.450581485102248e-09, 0.7181963920593262, 0.6958405375480652, 0.2502070367336273, 0.6737075448036194, -0.6953521966934204),
+                    [5] = Lp.Character.HumanoidRootPart.CFrame,
+                    [6] = 100
+                }
+                
+                game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+                wait(0.1)
+                end
+                wait()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pl:WaitForChild("Torso").CFrame*CFrame.new(Vector3.new(0, 30, 0))
+                
+                until pl.Humanoid.Health == 0 or not pl.Humanoid or Mission ~= "Player Kill" or pl:FindFirstChild("DamageScript").Enabled == false or not Players:FindFirstChild(pl.Name)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(98000, 3501, 80000))
+            end
+        end
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(98000, 3501, 80000))
+    end
+
+
+
+    if Mission == "Quests" then
+        workspace:WaitForChild("Merchants"):WaitForChild("QuestFishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+        wait()
+        for i, box in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+            if string.find(box.Name, "Package") then
+                game.Players.LocalPlayer.Character.Humanoid:EquipTool(box)
+            end
+        end
+        for i,v in pairs(workspace.Merchants:GetChildren()) do
+            if v:IsA("Model") and v.Name ~= "QuestHakiMerchant" and game.Players.LocalPlayer.Character:FindFirstChild("Package") then
+                game:GetService'VirtualUser':CaptureController()
+                game:GetService'VirtualUser':Button1Down(Vector2.new(0,0))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Torso.CFrame * CFrame.new(0,0,1)
+                wait(0.3)
+            end
+        end
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(98000, 3501, 80000))
+        if Lp.Character.Humanoid.Sit then
+            Lp.Character.Humanoid.Jump = true
+        end
+    end
+
+
+
+    if Mission ~= "Damage" and Mission ~= "Money" and Mission ~= "Player Kill" and Mission ~= "Quests" and Mission ~= "Elite Kill" and Mission ~= "Kill" and game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+        userData:WaitForChild("UpdateHaki"):FireServer()
+    end
+
+    wait()
+    _G.Contagem = _G.Contagem + 1
+end
+end
+end
+
+Lp.CharacterAdded:Connect(function()
+    wait(1.5)
+    game:GetService("Players").LocalPlayer.PlayerGui.HealthBar.Frame.Visible = true
+    game.Players.LocalPlayer.Character.CamScript.ClientServerClient:FireServer()
+    game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+    game.Players.LocalPlayer.Character.CharacterTrait.ClothingTrigger:FireServer()
+    game.Players.LocalPlayer.PlayerGui.Load.Frame.Visible = false 
+    wait(6)
+    
+    local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Bomb)
+    local vp = x.VTCcpkghc
+     
+    local args = {
+        [1] = vp,
+        [2] = "BombPower6",
+        [3] = "StartCharging",
+        [4] = CFrame.new(-14.463105201721191, 213, -264.1326904296875, 0.7344374656677246, -0.23108896613121033, 0.6381219029426575, 1.4901157641133977e-08, 0.9402447938919067, 0.34049952030181885, -0.6786763072013855, -0.2500756084918976, 0.6905510425567627),
+        [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("Beach"):WaitForChild("Beach"),
+        [7] = "Left"
+    }
+    game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+    wait(0.1)
+    local args = {
+        [1] = vp,
+        [2] = "BombPower6",
+        [3] = "StopCharging",
+        [4] = CFrame.new(-207.55979919433594, 262.3489074707031, 1.4924135208129883, -0.8548505902290344, 0.43575361371040344, -0.2816900312900543, -0, 0.5428869128227234, 0.8398058414459229, 0.5188742280006409, 0.717908501625061, -0.46408721804618835),
+        [5] = workspace:WaitForChild("IslandWindmill"):WaitForChild("House"):WaitForChild("Union"),
+        [6] = 0/0
+    }
+    game:GetService("Players").LocalPlayer.Character.Powers.Bomb.RemoteEvent:FireServer(unpack(args))
+    wait(1)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(98000, 3501, 80000))
+    hehe()
+end)
+
+hehe()
